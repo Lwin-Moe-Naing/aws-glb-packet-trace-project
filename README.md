@@ -7,7 +7,6 @@ This project demonstrates a secure network architecture using AWS Gateway Load B
 
  Architecture
 ![Architecture Diagram](image.png)
-*(Note: Ensure your diagram file is named `image.png` and is in the root of the repo)*
 
 Infrastructure Components
 The setup consists of the following AWS resources configured across two VPCs:
