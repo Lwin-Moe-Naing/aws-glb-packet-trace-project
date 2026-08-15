@@ -1,7 +1,7 @@
 # aws-glb-packet-trace-project
 Centralized security architecture using AWS GWLB to inspect traffic and log unauthorized access attempts to private AWS resources.
 # AWS Gateway Load Balancer - Centralized Traffic Inspection Project
-
+[日本語版](README.ja.md)
  Project Overview
 This project demonstrates a secure network architecture using AWS Gateway Load Balancer (GWLB) to inspect traffic flowing between different VPCs. It showcases how to implement a centralized inspection model using GENEVE encapsulation, effectively separating the "Testing/Consumer" environment from the "Appliance/Security" environment.
 
