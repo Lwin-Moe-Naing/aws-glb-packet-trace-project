@@ -58,10 +58,10 @@ Successfully connected to the Private Server via the Bastion Host and generated 
 
 ### 5. Packet Inspection Proof
 Captured GENEVE encapsulated packets on the Appliance Server using `tcpdump`, verifying that the GWLB is successfully intercepting and routing traffic.
-![tcpdump Verification](5-tcpdump.png)  
+![tcpdump Verification](5-tcp.png)  
 
  
- How it Works
+## How it Works
 1.  Traffic originates from the EC2 instance in the Testing Private Subnet.
 2.  The Route Table directs this traffic to the GWLB Endpoint.
 3.  The Endpoint encapsulates the traffic using GENEVE and forwards it to the GWLB in the Packet Trace VPC.
