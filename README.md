@@ -36,12 +36,38 @@ The setup consists of the following AWS resources configured across two VPCs:
     Route Tables: 3 Route Tables:Configured for respective subnets.
     Critical Routing Logic: The Private Subnet Route Table is modified to direct all outbound traffic (0.0.0.0/0) to the GWLB Endpoint, forcing traffic through the inspection path before reaching the internet.
 
+  ---
+
+## Implementation & Verification
+
+### 1. Target Group Setup (GENEVE Protocol)
+Configured the target group to use the GENEVE protocol on UDP port 6081, which is essential for GWLB traffic routing.
+![Target Group](1-target-group.png)
+
+### 2. GWLB Listener Routing
+Set up the GWLB listener to forward all incoming traffic to the designated Target Group.
+![GWLB Listener](2-listener.png)
+
+### 3. Critical Routing Logic (Private Route Table)
+Modified the private route table to force all outbound traffic (`0.0.0.0/0`) to the Gateway Load Balancer Endpoint (GWLBE).
+![Private Route Table](3-private-route.png)
+
+### 4. Traffic Generation & Testing
+Successfully connected to the Private Server via the Bastion Host and generated ICMP traffic to test the inspection path.
+![SSH Connection](4-ssh-test.png)
+
+### 5. Packet Inspection Proof
+Captured GENEVE encapsulated packets on the Appliance Server using `tcpdump`, verifying that the GWLB is successfully intercepting and routing traffic.
+![tcpdump Verification](5-tcpdump.png)  
+
+ 
  How it Works
 1.  Traffic originates from the EC2 instance in the Testing Private Subnet.
 2.  The Route Table directs this traffic to the GWLB Endpoint.
 3.  The Endpoint encapsulates the traffic using GENEVE and forwards it to the GWLB in the Packet Trace VPC.
 4.  GWLB forwards the traffic to the Appliance Server on UDP port 6081.
 5.  The appliance inspects the traffic, decapsulates it, and allows/denies based on security rules.
+
 
 ---
 Status:Architecture Design & Manual Implementation Complete.
