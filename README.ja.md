@@ -8,7 +8,7 @@ AWS GWLB を使用してトラフィックを検査し、プライベート AWS 
 このプロジェクトは、AWS Gateway Load Balancer (GWLB) を使用して異なる VPC 間を流れるトラフィックを検査するセキュアなネットワークアーキテクチャを示しています。GENEVE カプセル化を使用した集中型検査モデルを実装し、「Testing/Consumer」環境と「Appliance/Security」環境を効果的に分離する方法を紹介します。
 
 **アーキテクチャ**
-![Architecture Diagram](image.png)
+![Architecture Diagram](images/image.png)
 このプロジェクトは、AWS Gateway Load Balancer (GWLB) を使用して異なる VPC 間を流れるトラフィックを検査するセキュアなネットワークアーキテクチャを示しています。GENEVE カプセル化を使用した集中型検査モデルを実装し、「Testing/Consumer」環境と「Appliance/Security」環境を効果的に分離する方法を紹介します。
 
 ## 実装と検証
