@@ -6,7 +6,7 @@ Centralized security architecture using AWS GWLB to inspect traffic and log unau
 This project demonstrates a secure network architecture using AWS Gateway Load Balancer (GWLB) to inspect traffic flowing between different VPCs. It showcases how to implement a centralized inspection model using GENEVE encapsulation, effectively separating the "Testing/Consumer" environment from the "Appliance/Security" environment.
 
  Architecture
-![Architecture Diagram](image.png)
+![Architecture Diagram](image.png) 
 
 Infrastructure Components
 The setup consists of the following AWS resources configured across two VPCs:
